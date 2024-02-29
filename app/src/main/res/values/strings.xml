@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndoridTest</string>
+    <string name="app_name" translatable="false">Fit Runner</string>
     <string name="buttonUp">UP</string>
     <string name="buttonDown">DOWN</string>
     <string name="textViewContextMenu">Hold me</string>

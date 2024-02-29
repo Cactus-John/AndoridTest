@@ -143,24 +143,17 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    private fun setLocale(context: Context, languageCode: String) {
-        val locale = Locale(languageCode)
+    @Suppress("DEPRECATION")
+    private fun setLocale(context: Context, language: String) {
+        val locale = Locale(language)
         Locale.setDefault(locale)
-
-        val resources: Resources = context.resources
-        val config: Configuration = resources.configuration
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            val localeList = LocaleList(locale)
-            LocaleList.setDefault(localeList)
-            config.setLocales(localeList)
-
-        } else {
-            config.locale = locale
-        }
-
-        resources.updateConfiguration(config, resources.displayMetrics)
+        val res = context.resources
+        val config = Configuration(res.configuration)
+        config.setLocale(locale)
+        context.createConfigurationContext(config)
+        res.updateConfiguration(config, res.displayMetrics)
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.restore_counter -> {
@@ -169,13 +162,14 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.croatian -> {
-                setLocale(context = this, languageCode = "hr")
-                finish()
-                startActivity(getIntent())
-                return true
+                setLocale(this, "hr")
+                recreate()
+                true
             }
 
             R.id.english -> {
+                setLocale(this, "en")
+                recreate()
                 true
             }
         }

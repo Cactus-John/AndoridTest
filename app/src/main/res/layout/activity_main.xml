@@ -9,12 +9,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="272dp"
-        android:layout_height="500dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="204dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,61 +25,65 @@
             android:id="@+id/myToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:background="#BDAADF"
+            android:elevation="4dp"
             tools:ignore="MissingConstraints" />
-
 
         <TextView
             android:id="@+id/textView"
-            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="48sp"
             android:background="?colorSecondary"
+            android:gravity="center"
+            android:text="0"
             android:textColor="?colorOnSecondary"
-            android:text="0" />
+            android:textSize="48sp" />
 
         <Button
             android:id="@+id/buttonUp"
-            android:gravity="center"
             android:layout_width="wrap_content"
-            android:height="75dp"
-            android:width="145dp"
             android:layout_height="wrap_content"
+            android:width="145dp"
+            android:height="75dp"
+            android:gravity="center"
             android:onClick="setOnClickListenerUp"
-            android:textSize="25dp"
-            android:text="UP" />
+            android:layout_marginBottom="150dp"
+            android:text="@string/buttonUp"
+            android:textSize="25dp" />
 
         <Button
             android:id="@+id/buttonDown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:height="75dp"
+            android:layout_marginVertical="10dp"
             android:width="145dp"
+            android:height="75dp"
             android:onClick="setOnClickListenerDown"
-            android:textSize="25dp"
-            android:text="DOWN" />
+            android:text="@string/buttonDown"
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/plainTextName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="52sp"
             android:background="?colorSecondary"
+            android:text="BO"
             android:textColor="?colorOnSecondary"
-            android:text="BO" />
+            android:textSize="52sp" />
 
         <TextView
             android:id="@+id/textViewContextMenu"
+            android:name="@string/textViewContextMenu"
             android:layout_width="match_parent"
             android:layout_height="37dp"
             android:layout_centerHorizontal="true"
-            android:text="Hold me"
+            android:paddingLeft="3dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="2dp"
+            android:text="@string/textViewContextMenu"
             android:textColor="#fff"
             android:textSize="20sp"
-            android:paddingBottom="2dp"
-            android:paddingLeft="99dp"
-            android:paddingTop="14dp"
             android:textStyle="bold" />
 
     </LinearLayout>
