@@ -27,38 +27,54 @@
             android:id="@+id/successText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/successMessage"
             android:background="?colorSecondary"
             android:textColor="?colorOnSecondary"
             android:textSize="19dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupPhoneNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioButtonPhoneNumber1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_light_background"
+                android:text="0993232465"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonPhoneNumber2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_light_background"
+                android:text="0996231252"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonPhoneNumber3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_light_background"
+                android:text="0992221639"
+                android:textSize="16sp" />
+        </RadioGroup>
 
         <Button
             android:id="@+id/buttonIntent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:width="150dp"
-            android:height="50dp"
-            android:text="SMS"
-            android:textSize="16dp" />
+            android:onClick="sendButton"
+            android:text="@string/sendSMS"
+            android:textSize="20sp" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
 
     </LinearLayout>
 

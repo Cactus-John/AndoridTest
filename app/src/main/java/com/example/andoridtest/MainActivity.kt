@@ -161,6 +161,7 @@ class MainActivity : AppCompatActivity() {
                 button.setBackgroundColor(Color.rgb(255,165,0))
                 true
             }
+
             R.id.croatian -> {
                 setLocale(this, "hr")
                 recreate()
