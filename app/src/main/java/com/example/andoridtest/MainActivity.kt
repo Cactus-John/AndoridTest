@@ -102,7 +102,12 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Toast.makeText(applicationContext, "onDestroy", Toast.LENGTH_SHORT).show()
         Log.i("MyLog", "onDestroy")
-
+        //Log.i("MyLog", "onPause")
+        sharedPref.edit().putInt("count", counter).apply()
+        Log.i("MyLog", "valOnStop $counter")
+        val numberSharedPref = 66
+        sharedPref.getInt("count", numberSharedPref)
+        Log.i("MyLog", "valOnStopRet $numberSharedPref")
     }
 
     private fun insertDataToDatabase() {

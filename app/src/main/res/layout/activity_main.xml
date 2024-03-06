@@ -70,7 +70,7 @@
             android:text="@string/buttonDown"
             android:textSize="25dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/plainTextName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,6 +91,7 @@
             android:background="#000"
             android:textSize="20sp"
             android:textStyle="bold" />
+
 
     </LinearLayout>
 
