@@ -22,6 +22,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Build
 import android.os.LocaleList
+import android.text.TextUtils
+import androidx.lifecycle.ViewModelProvider
+import com.example.andoridtest.AnalyticsActivity
+import com.example.androidtest.data.User
+import com.example.androidtest.data.UserViewModel
+import java.time.LocalTime
 import java.util.*
 import java.util.Locale
 
@@ -30,7 +36,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var textCount: TextView
     private lateinit var sharedPref : SharedPreferences
     private lateinit var button : Button
+    private lateinit var mUserViewModel: UserViewModel
     private lateinit var textContextMenu: TextView
+    var press = 0
 
     companion object {
         const val COUNT_KEY = "COUNT_KEY"
@@ -96,8 +104,19 @@ class MainActivity : AppCompatActivity() {
         Log.i("MyLog", "onDestroy")
 
     }
+
+    private fun insertDataToDatabase() {
+        mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        val name = findViewById<TextView>(R.id.plainTextName).text.toString()
+        val time = LocalTime.now()
+        val timeString = time.toString() // this stores the value of time
+        val user = User(0, name, timeString, counter)
+        mUserViewModel.addUser(user)
+    }
+
     fun setOnClickListenerUp(view: View) {
         counter++
+        insertDataToDatabase()
         textCount.text = counter.toString()
         if (counter == 10)
         {
@@ -172,6 +191,11 @@ class MainActivity : AppCompatActivity() {
                 setLocale(this, "en")
                 recreate()
                 true
+            }
+
+            R.id.analytics ->{
+                val intent = Intent(this, AnalyticsActivity::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)

@@ -5,10 +5,19 @@
         android:title="Resetiraj"
         android:icon="@drawable/baseline_settings_backup_restore_24"
         app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/analytics"
+        android:title="Analytics"
+        android:icon="@drawable/baseline_analytics_24"
+        app:showAsAction="ifRoom"/>
+
     <item
         android:id="@+id/croatian"
         android:title="Hrvatski" />
     <item
         android:id="@+id/english"
         android:title="Engleski" />
+
+
 </menu>
